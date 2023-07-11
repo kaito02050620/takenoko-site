@@ -1,0 +1,54 @@
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &_container {
+    max-width: 1380px;
+    height: 80px;
+    padding: 15px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    width: 220px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 60px;
+    background-color: $main-color;
+    color: $base-color;
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: $sub-color;
+    }
+  }
+
+  &_menu {
+    width: 266px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    &_item {
+      &:nth-child(2) {
+        margin: 0 40px;
+      }
+
+      &_icon {
+        width: 67px;
+        height: 67px;
+        color: $main-color;
+        transition: all 0.1s;
+
+        &:hover {
+          color: $sub-color;
+        }
+      }
+    }
+  }
+}

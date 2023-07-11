@@ -1,0 +1,29 @@
+.home {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &_wrapper {
+    max-width: 1380px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_item {
+    display: block;
+    background-color: $main-color;
+    color: $base-color;
+    width: 300px;
+    height: 300px;
+    margin: 0 40px;
+    text-align: center;
+    line-height: 300px;
+    border-radius: 50%;
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: $sub-color;
+    }
+  }
+}
