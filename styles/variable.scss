@@ -2,5 +2,19 @@
 $main-color: #45a2ce;
 $sub-color: #eeac5b;
 $base-color: #fffbed;
+$special-color: #ff7a7a;
 
 //font-size
+
+//animation mixin
+@mixin hover-transition($element: bg, $duration: 0.1s) {
+  transition: all $duration;
+
+  &:hover {
+    @if $element == bg {
+      background-color: $sub-color;
+    } @else if $element == txt {
+      color: $sub-color;
+    }
+  }
+}

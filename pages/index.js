@@ -16,10 +16,6 @@ const Home = () => {
         <meta property="og:site_name" content="" />
         <meta property="og:image" content="" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

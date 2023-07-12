@@ -1,11 +1,10 @@
-import MyDescription from "@/components/about/myDescription";
-import Skill from "@/components/about/skill";
 import Footer from "@/components/common/footer";
 import GlobalNavigation from "@/components/common/globalNavi";
 import Header from "@/components/common/header";
 import Head from "next/head";
+import blogS from "../styles/components/blog/blog.module.scss";
 
-const about = () => {
+const blog = () => {
   return (
     <>
       <Head>
@@ -29,12 +28,11 @@ const about = () => {
       <div className="global-container">
         <Header />
         <GlobalNavigation />
-        <MyDescription />
-        <Skill />
+        <div className={blogS.notDone}>準備中です！</div>
         <Footer />
       </div>
     </>
   );
 };
 
-export default about;
+export default blog;

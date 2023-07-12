@@ -1,8 +1,9 @@
 .home {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &_wrapper {
     max-width: 1380px;
@@ -20,10 +21,7 @@
     text-align: center;
     line-height: 300px;
     border-radius: 50%;
-    transition: all 0.1s;
 
-    &:hover {
-      background-color: $sub-color;
-    }
+    @include hover-transition();
   }
 }

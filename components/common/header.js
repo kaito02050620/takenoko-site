@@ -14,19 +14,27 @@ const Header = () => {
         </Link>
         <ul className={header.header_menu}>
           <li className={header.header_menu_item}>
-            <Link href="https://github.com/kaito02050620">
+            <Link
+              href="https://github.com/kaito02050620"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiFillGithub className={header.header_menu_item_icon} />
             </Link>
           </li>
           <li className={header.header_menu_item}>
-            <Link href="https://twitter.com/takenokoengin">
+            <Link
+              href="https://twitter.com/takenokoengin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiFillTwitterCircle className={header.header_menu_item_icon} />
             </Link>
           </li>
           <li className={header.header_menu_item}>
-            <Link href="https://twitter.com/takenokoengin">
+            <button>
               <AiFillTwitterCircle className={header.header_menu_item_icon} />
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

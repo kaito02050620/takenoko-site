@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
 
@@ -21,11 +21,8 @@
     line-height: 60px;
     background-color: $main-color;
     color: $base-color;
-    transition: all 0.1s;
 
-    &:hover {
-      background-color: $sub-color;
-    }
+    @include hover-transition();
   }
 
   &_menu {
@@ -43,11 +40,8 @@
         width: 67px;
         height: 67px;
         color: $main-color;
-        transition: all 0.1s;
 
-        &:hover {
-          color: $sub-color;
-        }
+        @include hover-transition(txt);
       }
     }
   }

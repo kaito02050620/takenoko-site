@@ -1,0 +1,31 @@
+.skill {
+  color: $main-color;
+  margin-top: 40px;
+  margin-bottom: 90px;
+  width: 100%;
+  text-align: center;
+
+  &_title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  &_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_icon {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & svg {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
