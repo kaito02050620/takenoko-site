@@ -3,6 +3,13 @@ $main-color: #45a2ce;
 $sub-color: #eeac5b;
 $base-color: #fffbed;
 $special-color: #ff7a7a;
+$bg-color: linear-gradient(
+  180deg,
+  rgba(255, 251, 237, 1) 0%,
+  rgba(246, 247, 235, 1) 63%,
+  rgba(160, 197, 213, 0.516) 79%,
+  rgba(69, 162, 206, 1) 100%
+);
 
 //font-size
 
@@ -16,5 +23,18 @@ $special-color: #ff7a7a;
     } @else if $element == txt {
       color: $sub-color;
     }
+  }
+}
+
+//bgAnimation
+@keyframes colorAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 60%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }

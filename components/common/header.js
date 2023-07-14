@@ -2,8 +2,19 @@ import Link from "next/link";
 import { AiFillGithub, AiFillTwitterCircle } from "react-icons/ai";
 import header from "../../styles/components/common/header.module.scss";
 import utils from "../../styles/utils.module.scss";
+import { useState } from "react";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const toggleMenu = () => {
+    if (open == true) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  };
+
   return (
     <header className={header.header}>
       <div className={header.header_container}>
@@ -32,9 +43,44 @@ const Header = () => {
             </Link>
           </li>
           <li className={header.header_menu_item}>
-            <button>
-              <AiFillTwitterCircle className={header.header_menu_item_icon} />
+            <button className={header.header_hamburger} onClick={toggleMenu}>
+              <span
+                className={`${header.header_hamburger_line} ${
+                  open == true ? header.open : ""
+                }`}
+              ></span>
+              <span
+                className={`${header.header_hamburger_line} ${
+                  open == true ? header.open : ""
+                }`}
+              ></span>
+              <span
+                className={`${header.header_hamburger_line} ${
+                  open == true ? header.open : ""
+                }`}
+              ></span>
             </button>
+            {open == true ? (
+              <div
+                className={`${header.header_hamburger_menu}  ${
+                  open == true ? header.open : ""
+                }`}
+              >
+                <ul className="">
+                  <li className={``}>
+                    <Link href="/about">自己紹介</Link>
+                  </li>
+                  <li className={``}>
+                    <Link href="/work">制作物</Link>
+                  </li>
+                  <li className={``}>
+                    <Link href="/blog">技術ブログ</Link>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              ""
+            )}
           </li>
         </ul>
       </div>

@@ -32,6 +32,8 @@
     align-items: center;
 
     &_item {
+      position: relative;
+
       &:nth-child(2) {
         margin: 0 40px;
       }
@@ -42,6 +44,80 @@
         color: $main-color;
 
         @include hover-transition(txt);
+      }
+    }
+  }
+
+  &_hamburger {
+    width: 60px;
+    height: 60px;
+    background-color: $main-color;
+    border-radius: 50%;
+    position: relative;
+    z-index: 100;
+    border: 4px solid $base-color;
+
+    @include hover-transition(bg);
+
+    &_menu {
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: -50%;
+      right: 50%;
+      z-index: 10;
+      border-radius: 0 0 0 100%;
+      transition: all 0.5s;
+      background-color: $main-color;
+
+      &.open {
+        width: 100vw;
+        height: 100vh;
+        margin: 0 calc(50% - 50vw);
+      }
+    }
+
+    &_line {
+      position: absolute;
+
+      display: block;
+      content: "";
+      width: 32px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: $base-color;
+      transition: all 0.5s;
+
+      &:nth-of-type(1) {
+        top: 30%;
+        right: 50%;
+        transform: translate(50%, -50%);
+
+        &.open {
+          top: 50%;
+          transform: translate(50%, 0%) rotateZ(-315deg);
+        }
+      }
+
+      &:nth-of-type(2) {
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+
+        &.open {
+          opacity: 0;
+        }
+      }
+
+      &:nth-of-type(3) {
+        top: 70%;
+        right: 50%;
+        transform: translate(50%, -50%);
+
+        &.open {
+          top: 50%;
+          transform: translate(50%, 0%) rotateZ(315deg);
+        }
       }
     }
   }

@@ -1,16 +1,16 @@
-html {
-  height: 100%;
-}
-
 body {
+  margin: 0;
   width: 100%;
-  background-color: $base-color;
+  height: 100%;
   font-family: "Kosugi Maru", sans-serif;
 
   .global-container {
-    position: static;
+    width: 100%;
+    min-height: 100vh;
+    background: $bg-color;
+    animation: colorAnimation 6s ease infinite;
+    background-size: 120% 120%;
+    background-repeat: no-repeat;
+    position: absolute;
   }
 }
-
-//Web Animation APIで動的に背景色変化させる
-//js Animation ハンバーガー　ヘッダー背景　背景動的に色変化 レスポンシブ

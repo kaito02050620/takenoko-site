@@ -1,13 +1,13 @@
 .work {
   color: $base-color;
-  padding: 0px 15px;
-  max-width: 1380px;
   margin-top: 40px;
   margin-bottom: 90px;
   font-size: 18px;
 
   &_wrapper {
-    width: 100%;
+    padding: 0px 15px;
+    max-width: 1380px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
