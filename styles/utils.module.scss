@@ -1,23 +1,80 @@
+//============================text-size===============================
 .text {
   &SS {
-    font-size: 12px;
+    font-size: 8px;
+
+    @include responsive(md) {
+      font-size: 10px;
+    }
+
+    @include responsive(xl) {
+      font-size: 12px;
+    }
   }
   &S {
-    font-size: 14px;
+    font-size: 10px;
+
+    @include responsive(md) {
+      font-size: 10px;
+    }
+
+    @include responsive(xl) {
+      font-size: 14px;
+    }
   }
   &MS {
-    font-size: 18px;
+    font-size: 10px;
+
+    @include responsive(md) {
+      font-size: 14px;
+    }
+
+    @include responsive(xl) {
+      font-size: 18px;
+    }
   }
   &M {
-    font-size: 20px;
+    font-size: 12px;
+
+    @include responsive(md) {
+      font-size: 16px;
+    }
+
+    @include responsive(xl) {
+      font-size: 20px;
+    }
   }
   &L {
-    font-size: 24px;
+    font-size: 16px;
+
+    @include responsive(md) {
+      font-size: 20px;
+    }
+
+    @include responsive(xl) {
+      font-size: 24px;
+    }
   }
   &2L {
-    font-size: 36px;
+    font-size: 24px;
+
+    @include responsive(md) {
+      font-size: 30px;
+    }
+
+    @include responsive(xl) {
+      font-size: 36px;
+    }
   }
   &Logo {
-    font-size: 24px;
+    font-size: 18px;
+
+    @include responsive(md) {
+      font-size: 21px;
+    }
+
+    @include responsive(xl) {
+      font-size: 24px;
+    }
   }
 }

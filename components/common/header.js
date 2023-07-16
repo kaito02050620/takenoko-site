@@ -43,7 +43,18 @@ const Header = () => {
             </Link>
           </li>
           <li className={header.header_menu_item}>
-            <button className={header.header_hamburger} onClick={toggleMenu}>
+            <div
+              className={`${header.header_hamburger_menu_bg} ${
+                open == true ? header.open : ""
+              }`}
+              onClick={toggleMenu}
+            ></div>
+            <button
+              className={`${header.header_hamburger} ${
+                open == true ? header.open : ""
+              }`}
+              onClick={toggleMenu}
+            >
               <span
                 className={`${header.header_hamburger_line} ${
                   open == true ? header.open : ""
@@ -60,27 +71,29 @@ const Header = () => {
                 }`}
               ></span>
             </button>
-            {open == true ? (
-              <div
-                className={`${header.header_hamburger_menu}  ${
-                  open == true ? header.open : ""
-                }`}
-              >
-                <ul className="">
-                  <li className={``}>
-                    <Link href="/about">自己紹介</Link>
-                  </li>
-                  <li className={``}>
-                    <Link href="/work">制作物</Link>
-                  </li>
-                  <li className={``}>
-                    <Link href="/blog">技術ブログ</Link>
-                  </li>
-                </ul>
-              </div>
-            ) : (
-              ""
-            )}
+            <div
+              className={`${header.header_hamburger_menu}  ${
+                open == true ? header.open : ""
+              }`}
+            >
+              <ul className={`${header.header_hamburger_guide} `}>
+                <li
+                  className={`${header.header_hamburger_guide_link} ${utils.text2L}`}
+                >
+                  <Link href="/about">自己紹介</Link>
+                </li>
+                <li
+                  className={`${header.header_hamburger_guide_link} ${utils.text2L}`}
+                >
+                  <Link href="/work">制作物</Link>
+                </li>
+                <li
+                  className={`${header.header_hamburger_guide_link} ${utils.text2L}`}
+                >
+                  <Link href="/blog">技術ブログ</Link>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

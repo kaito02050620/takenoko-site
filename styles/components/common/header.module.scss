@@ -2,27 +2,50 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
 
   &_container {
     max-width: 1380px;
-    height: 80px;
-    padding: 15px;
+    height: 60px;
+    padding: 10px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include responsive(md) {
+      height: 70px;
+      padding: 13px;
+    }
+
+    @include responsive(xl) {
+      height: 80px;
+      padding: 15px;
+    }
   }
 
   &_logo {
-    width: 220px;
-    height: 60px;
+    width: 150px;
+    height: 40px;
     border-radius: 50px;
     text-align: center;
-    line-height: 60px;
+    line-height: 40px;
     background-color: $main-color;
     color: $base-color;
 
     @include hover-transition();
+
+    @include responsive(md) {
+      width: 185px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    @include responsive(xl) {
+      width: 220px;
+      height: 60px;
+      line-height: 60px;
+    }
   }
 
   &_menu {
@@ -35,58 +58,122 @@
       position: relative;
 
       &:nth-child(2) {
-        margin: 0 40px;
+        margin: 0 8px;
+
+        @include responsive(md) {
+          margin: 0 15px;
+        }
+
+        @include responsive(xl) {
+          margin: 0 40px;
+        }
       }
 
       &_icon {
-        width: 67px;
-        height: 67px;
+        width: 47px;
+        height: 47px;
         color: $main-color;
 
         @include hover-transition(txt);
+
+        @include responsive(md) {
+          width: 57px;
+          height: 57px;
+        }
+
+        @include responsive(xl) {
+          width: 67px;
+          height: 67px;
+        }
       }
     }
   }
 
   &_hamburger {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background-color: $main-color;
     border-radius: 50%;
     position: relative;
     z-index: 100;
-    border: 4px solid $base-color;
+
+    &.open {
+      border: 2px solid $base-color;
+
+      @include responsive(md) {
+        border: 3px solid $base-color;
+      }
+
+      @include responsive(xl) {
+        border: 4px solid $base-color;
+      }
+    }
 
     @include hover-transition(bg);
 
-    &_menu {
+    @include responsive(md) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include responsive(xl) {
+      width: 60px;
+      height: 60px;
+    }
+
+    &_guide {
+      text-align: center;
+      width: 200px;
+      height: 230px;
       position: absolute;
-      width: 0;
-      height: 0;
-      top: -50%;
-      right: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &_link {
+        color: $base-color;
+        margin-bottom: 60px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &_menu {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      right: -110vw;
       z-index: 10;
-      border-radius: 0 0 0 100%;
       transition: all 0.5s;
       background-color: $main-color;
 
       &.open {
-        width: 100vw;
-        height: 100vh;
-        margin: 0 calc(50% - 50vw);
+        right: 0;
       }
     }
 
     &_line {
       position: absolute;
-
       display: block;
       content: "";
-      width: 32px;
-      height: 4px;
+      width: 26px;
+      height: 2px;
       border-radius: 4px;
       background-color: $base-color;
       transition: all 0.5s;
+
+      @include responsive(md) {
+        width: 30px;
+        height: 3px;
+      }
+
+      @include responsive(xl) {
+        width: 32px;
+        height: 4px;
+      }
 
       &:nth-of-type(1) {
         top: 30%;
