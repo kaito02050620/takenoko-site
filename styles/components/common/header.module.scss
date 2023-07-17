@@ -4,6 +4,11 @@
   width: 100%;
   z-index: 100;
 
+  &.scrolled {
+    background-color: rgba(255, 251, 237, 0.8);
+    transition: all 0.5s;
+  }
+
   &_container {
     max-width: 1380px;
     height: 60px;
@@ -132,7 +137,9 @@
 
       &_link {
         color: $base-color;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
+
+        @include hover-transition(txt);
 
         &:last-child {
           margin-bottom: 0;

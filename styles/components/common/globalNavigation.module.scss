@@ -8,12 +8,23 @@
 
     &_item {
       color: $main-color;
-      font-size: 24px;
 
       @include hover-transition(txt);
 
+      &.selected {
+        color: $sub-color;
+      }
+
       &:nth-child(2) {
-        margin: 0px 40px;
+        margin: 0px 20px;
+
+        @include responsive(md) {
+          margin: 0px 30px;
+        }
+
+        @include responsive(xl) {
+          margin: 0px 40px;
+        }
       }
     }
   }

@@ -2,11 +2,33 @@ import Link from "next/link";
 import { AiFillGithub, AiFillTwitterCircle } from "react-icons/ai";
 import header from "../../styles/components/common/header.module.scss";
 import utils from "../../styles/utils.module.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [heightClass, setHeightClass] = useState("");
+  const scrollRef = useRef(0);
 
+  //ヘッダーの高さを取得して背景を表示させる
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollRef.current = window.scrollY;
+
+      if (scrollRef.current > 0) {
+        setHeightClass(header.scrolled);
+      } else {
+        setHeightClass("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  //ハンバーガーメニュートグルボタン
   const toggleMenu = () => {
     if (open == true) {
       setOpen(false);
@@ -16,8 +38,8 @@ const Header = () => {
   };
 
   return (
-    <header className={header.header}>
-      <div className={header.header_container}>
+    <header className={`${header.header} ${heightClass}`}>
+      <div className={`${header.header_container}`}>
         <Link href="/">
           <h1 className={`${header.header_logo} ${utils.textLogo}`}>
             タケノコの部屋
@@ -77,6 +99,11 @@ const Header = () => {
               }`}
             >
               <ul className={`${header.header_hamburger_guide} `}>
+                <li
+                  className={`${header.header_hamburger_guide_link} ${utils.text2L}`}
+                >
+                  <Link href="/">ホーム</Link>
+                </li>
                 <li
                   className={`${header.header_hamburger_guide_link} ${utils.text2L}`}
                 >

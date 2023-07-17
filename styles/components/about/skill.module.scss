@@ -1,31 +1,78 @@
 .skill {
   color: $main-color;
-  margin-top: 40px;
-  margin-bottom: 90px;
+  margin-top: 20px;
+  margin-bottom: 60px;
   width: 100%;
   text-align: center;
 
+  @include responsive(sm) {
+    margin-bottom: 70px;
+  }
+
+  @include responsive(md) {
+    margin-top: 35px;
+    margin-bottom: 80px;
+  }
+
+  @include responsive(xl) {
+    margin-top: 40px;
+    margin-bottom: 90px;
+  }
+
   &_title {
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    @include responsive(md) {
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+
+    @include responsive(xl) {
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
   }
 
   &_list {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   &_icon {
-    margin-right: 30px;
+    margin: 0 5px;
+
+    @include responsive(sm) {
+      margin-right: 10px;
+    }
+
+    @include responsive(md) {
+      margin-right: 20px;
+    }
+
+    @include responsive(xl) {
+      margin-right: 30px;
+    }
 
     &:last-child {
       margin-right: 0;
     }
 
     & svg {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
+
+      @include responsive(md) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @include responsive(xl) {
+        width: 100px;
+        height: 100px;
+      }
     }
   }
 }

@@ -15,7 +15,9 @@ const Works = () => {
                 <img src={work.image} alt={work.title} />
               </div>
               <div className="">
-                <h2 className={`${workStyle.work_title}`}>{work.title}</h2>
+                <h2 className={`${workStyle.work_title} ${utils.textM}`}>
+                  {work.title}
+                </h2>
                 <Link
                   className={`${utils.textS} ${workStyle.work_url}`}
                   href={work.url}
@@ -26,12 +28,18 @@ const Works = () => {
                 </Link>
               </div>
               <div className={`${workStyle.work_item_list}`}>
-                <h3 className={`${workStyle.work_title}`}>使用技術</h3>
+                <h3 className={`${workStyle.work_title}  ${utils.textM}`}>
+                  使用技術
+                </h3>
                 <WorkList stack={work.stack} />
               </div>
               <div className={`${workStyle.work_item_list}`}>
-                <h3 className={`${workStyle.work_title}`}>制作時間</h3>
-                <p className={`${workStyle.work_text}`}>{work.time}</p>
+                <h3 className={`${workStyle.work_title} ${utils.textM}`}>
+                  制作時間
+                </h3>
+                <p className={`${workStyle.work_text} ${utils.textMS}`}>
+                  {work.time}
+                </p>
               </div>
             </li>
           );

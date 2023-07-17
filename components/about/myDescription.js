@@ -8,7 +8,7 @@ const MyDescription = () => {
         <img
           className={desc.desc_image_item}
           src="/images/takenoko.png"
-          alt="My avatar"
+          alt="takemoko"
         />
       </div>
       <p className={`${desc.desc_text} ${utils.textL}`}>

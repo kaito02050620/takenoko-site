@@ -1,9 +1,14 @@
 .desc {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 30px;
+
+  @include responsive(md) {
+    margin-top: 40px;
+  }
 
   &_image {
     max-width: 400px;
+    padding: 10px;
     margin: 0 auto;
 
     &_item {
@@ -15,10 +20,36 @@
   }
 
   &_text {
-    text-align: center;
-    margin-top: 40px;
+    text-align: left;
+    margin-top: 20px;
     color: $main-color;
-    line-height: 3rem;
+    line-height: 2rem;
+    padding: 10px;
+
+    @include responsive(sm) {
+      text-align: center;
+    }
+
+    @include responsive(md) {
+      margin-top: 35px;
+      line-height: 2rem;
+    }
+
+    @include responsive(xl) {
+      margin-top: 40px;
+      line-height: 3rem;
+    }
+
+    & br {
+      display: none;
+
+      @include responsive(sm) {
+        display: block;
+      }
+
+      @include responsive(xl) {
+      }
+    }
 
     & span {
       color: $special-color;
